@@ -3,7 +3,6 @@
 ### Benjamin Alvarado 👦🏻
 ### Rafael Villaseñor   👦🏻
 ### Fernando Toledo 👦🏻
-### Chris Corzo 👦🏻
 ### Developers Web Full Stack JS in training
 
 ### Herramientas Utilizadas 🛠 
