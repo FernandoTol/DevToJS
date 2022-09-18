@@ -64,7 +64,7 @@
                             placeholder="Inserta url de imagen de avatar...">
                     </div>
                     <label for="imagen" class="form-label FBold">Imagen Cover </label>
-                    <input id="cover-image" type="file" class="form-control"
+                    <input id="cover-image" type="text" class="form-control"
                         placeholder="Inserta url de imagen de portada...">
                 </div>
                 <div class="mb-2">
@@ -74,12 +74,8 @@
                 </div>
                 <div class="mb-2">
                     <label for="etiqueta" class="form-label FBold">Etiquetas</label>
-                    <select class="form-control" id="categoria" aria-label="Default select example">
-                        <option value="seleccione" selected disabled>Seleccione Etiquetas</option>
-                        <option value="relevant">#Top</option>
-                        <option value="latest">#Github</option>
-                        <option value="Top">#2022</option>
-                    </select>
+                    <input type="text" class="form-control" id="titulo"
+                        placeholder="Agrega las etiquetas separadas con ',' ">
                 </div>
                 <div class="mb-2">
                     <label for="contenido" class="form-label FBold">Contenido</label>
