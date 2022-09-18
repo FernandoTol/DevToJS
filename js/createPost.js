@@ -22,3 +22,4 @@ const sendPost = document.querySelector("#sendPost");
 sendPost.addEventListener("click", () => {
 post(getValueInput());
 });
+// Termina creacion de POST 
