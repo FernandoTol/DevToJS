@@ -1,6 +1,7 @@
 import { getTasks } from './credenciales.js';
 
 // * Get
+const collection = 'DevtoPOST'
 const cardsContainer = document.querySelector('#cardsContainer')
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -9,17 +10,17 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     querySnapshot.forEach((doc) => {
         const post = doc.data();
-        console.log(post)
 
         const etiqueta = (etiqueta) => {
             let lista = `<a class="container__crayons-tag"><span
             class="crayons-tag__prefix">${etiqueta}</span></a>`
             return lista
         }
+
         const etiquetasarr = post.etiquetas
         let element = ""
         for (let index = 0; index < etiquetasarr.length; index++) {
-            element +=  etiqueta(etiquetasarr[index]);
+            element += etiqueta(etiquetasarr[index]);
         }
 
         cardsContainer.innerHTML += `
@@ -32,7 +33,7 @@ window.addEventListener("DOMContentLoaded", async () => {
                     </div>
                     <div id="contenidoEtiqueta" class="conteiner__tow ">
                         <h1 class="container__two--title col-12  ">
-                            <a class="container__titleSmall " href="./pages/postCard.html">${post.title}</a>
+                            <a class="container__titleSmall " href="./pages/postCard.html?${doc.id} ">${post.title}</a>
                         </h1>
                         ${element}
                     </div>
@@ -59,6 +60,5 @@ window.addEventListener("DOMContentLoaded", async () => {
                 </div>
             </section>
             `;
-
     })
 })

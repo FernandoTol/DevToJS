@@ -1,4 +1,4 @@
-import { getFirestore, addDoc, deleteDoc, updateDoc, getDocs, collection, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+import { getFirestore, addDoc, deleteDoc, updateDoc, getDocs, collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
 
 const firebaseConfig = {
@@ -20,3 +20,4 @@ const db = getFirestore();
 
 // * Get
 export const getTasks = () => getDocs(collection(db, 'DevtoPOST'));
+export const docRef = (id) => getDoc(doc(db, 'DevtoPOST', id));
