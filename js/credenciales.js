@@ -20,3 +20,6 @@ const db = getFirestore();
 
 // * Get
 export const getTasks = () => getDocs(collection(db, 'DevtoPOST'));
+
+// *Post
+export const post = (data) => addDoc(collection(db, 'DevtoPOST'),data)
