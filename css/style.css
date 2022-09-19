@@ -683,6 +683,16 @@ body {
   border-radius: 40%;
 }
 
+.imgUserC {
+  height: 60px;
+  width: 60px;
+}
+
+.imgCoverC {
+  height: 30px;
+  width: 150px;
+}
+
 .form-label {
   font-family: "Montserrat", Arial, sans-serif;
   border-radius: 10px;
