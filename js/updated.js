@@ -31,9 +31,11 @@ window.addEventListener("DOMContentLoaded", async () => {
         let imgCover = document.createElement('img');
 
         imgUsuario.src = imagenAvatar
+        imgUsuario.className = 'imgUserC'
+        imgCover.className = 'imgCoverC'
         imgCover.src = imagenPortada
-        imagenUsuario.innerHTML = imgUsuario
-        imagenCover.innerHTML = imgCover
+        imagenUsuario.appendChild(imgUsuario) 
+        imagenCover.appendChild(imgCover) 
 
         console.log(imgUsuario);
         console.log(imgCover);
@@ -41,6 +43,8 @@ window.addEventListener("DOMContentLoaded", async () => {
         document.querySelector('#titulo').value = title;
         document.querySelector('#usuario').value = usuario;
         document.querySelector('#etiquetas').value = newEtiquetas;
+        document.querySelector('#imagen-avatar').value = imagenAvatar;
+        document.querySelector('#cover-image').value = imagenPortada;
 
     } else {
         // * querySnapshot.data() will be undefined in this case

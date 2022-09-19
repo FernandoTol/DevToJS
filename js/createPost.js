@@ -23,5 +23,8 @@ const getValueInput = () => {
 const sendPost = document.querySelector("#sendPost");
 sendPost.addEventListener("click", () => {
   post(getValueInput());
+  setTimeout(() => {
+    window.location.href = "../index.html"
+}, '2000')
 });
 // !Termina creacion de POST
