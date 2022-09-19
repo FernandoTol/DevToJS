@@ -623,6 +623,8 @@ a:hover {
 
 body {
   background-color: #e5e5e5;
+  font-family: "Mulish", sans-serif;
+  font-family: "Public Sans", sans-serif;
 }
 
 .FBold {
@@ -630,8 +632,51 @@ body {
 }
 
 .FBol-g {
-  color: red;
+  color: white;
   font-size: 20px;
+}
+
+.title_name {
+  @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@800&display=swap");
+  color: #575757;
+  font-family: "Mulish", sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.userName {
+  color: #575757;
+  font-family: "Mulish", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.userImg {
+  color: #575757;
+  font-family: "Mulish", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.coverImg {
+  color: #575757;
+  font-family: "Mulish", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.tagsName {
+  color: #575757;
+  font-family: "Mulish", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.contenName {
+  color: #575757;
+  font-family: "Mulish", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .form-label {
