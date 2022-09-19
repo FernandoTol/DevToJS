@@ -10,6 +10,9 @@ let idPost = urlArr[1]
 
 window.addEventListener("DOMContentLoaded", async () => {
     const querySnapshot = await docRef(idPost);
+    const imagenUsuario = document.querySelector('#imagenUsuario');
+    const imagenCover = document.querySelector('#imagenCover');   
+
 
     if (querySnapshot.exists()) {
         const postData = querySnapshot.data();
@@ -24,7 +27,16 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         let etiquetasstr = etiquetasArr.toString();
         let newEtiquetas = etiquetasstr.replace(/,|_|-|@|<>/g, " ")
+        let imgUsuario = document.createElement('img');
+        let imgCover = document.createElement('img');
 
+        imgUsuario.src = imagenAvatar
+        imgCover.src = imagenPortada
+        imagenUsuario.innerHTML = imgUsuario
+        imagenCover.innerHTML = imgCover
+
+        console.log(imgUsuario);
+        console.log(imgCover);
         document.querySelector('#contenido').value = contenido;
         document.querySelector('#titulo').value = title;
         document.querySelector('#usuario').value = usuario;
