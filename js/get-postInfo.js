@@ -1,4 +1,5 @@
 import { docRef } from './credenciales.js';
+import { borrando } from './deletePost.js';
 
 // * Get
 const collection = 'DevtoPOST'
@@ -9,7 +10,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     let urlArr = url.split('?')
     let idPost = urlArr[1]
     const querySnapshot = await docRef(idPost);
-    console.log(querySnapshot)
+
     if (querySnapshot.exists()) {
         const post = querySnapshot.data();
 
@@ -45,6 +46,11 @@ window.addEventListener("DOMContentLoaded", async () => {
             </div>
         </section>
         `;
+
+        const borrar = document.querySelector('#delete')
+        borrar.addEventListener('click', () => {
+            borrando(idPost)
+        })
 
     } else {
         // * querySnapshot.data() will be undefined in this case
