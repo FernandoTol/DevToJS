@@ -27,3 +27,7 @@ export const post = (data) => addDoc(collection(db, 'DevtoPOST'),data)
 
 export const docRef = (id) => getDoc(doc(db, 'DevtoPOST', id));
 
+// *Delete
+export const deletePost = (id) => deleteDoc(doc(db, 'DevtoPOST', id ));
+
+
