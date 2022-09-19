@@ -4,6 +4,7 @@ import { borrando } from './deletePost.js';
 // * Get
 const collection = 'DevtoPOST'
 const cardsContainer = document.querySelector('#postContainer')
+const btnActualizar = document.querySelector('#actualizar')
 
 window.addEventListener("DOMContentLoaded", async () => {
     const url = document.URL
@@ -32,7 +33,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             <div class="card-body">
                 <div class="container__imgtext">
                     <img class="container__imgUser" src="${post.imagenAvatar}" alt="">
-                    <p class="container__imgtext--name"> Simon Holdorf <br> Oct 6'19</p>
+                    <p class="container__imgtext--name"> ${post.usuario} <br> Oct 6'19</p>
                 </div>
                 <div id="contenidoEtiqueta" class="conteiner__tow ">
                     <h1 class="container__two--title col-12  ">
@@ -50,6 +51,10 @@ window.addEventListener("DOMContentLoaded", async () => {
         const borrar = document.querySelector('#delete')
         borrar.addEventListener('click', () => {
             borrando(idPost)
+        })
+
+        btnActualizar.addEventListener('click', () => {
+            window.location.href=`./updatePost.html?${idPost}`
         })
 
     } else {

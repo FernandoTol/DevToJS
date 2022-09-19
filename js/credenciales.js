@@ -20,14 +20,16 @@ const db = getFirestore();
 
 // * Get
 export const getTasks = () => getDocs(collection(db, 'DevtoPOST'));
+export const docRef = (id) => getDoc(doc(db, 'DevtoPOST', id));
 
 
 // *Post
 export const post = (data) => addDoc(collection(db, 'DevtoPOST'),data)
 
-export const docRef = (id) => getDoc(doc(db, 'DevtoPOST', id));
 
 // *Delete
 export const deletePost = (id) => deleteDoc(doc(db, 'DevtoPOST', id ));
 
+// * Update
+export const updatePost = (id, newContent) => updateDoc(doc(db, 'DevtoPOST', id),newContent)
 
