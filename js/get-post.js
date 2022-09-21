@@ -1,36 +1,36 @@
-import { getTasks } from './credenciales.js';
+import { getTasks } from "./credenciales.js";
 
 // * Get
-const collection = 'DevtoPOST'
-const cardsContainer = document.querySelector('#cardsContainer')
+const collection = "DevtoPOST";
+const cardsContainer = document.querySelector("#cardsContainer");
 
 window.addEventListener("DOMContentLoaded", async () => {
+  const querySnapshot = await getTasks();
 
-    const querySnapshot = await getTasks();
+  querySnapshot.forEach((doc) => {
+    const post = doc.data();
 
-    querySnapshot.forEach((doc) => {
-        const post = doc.data();
+    const etiqueta = (etiqueta) => {
+      let lista = `<a class="container__crayons-tag"><span
+            class="crayons-tag__prefix">${etiqueta}</span></a>`;
+      return lista;
+    };
 
-        const etiqueta = (etiqueta) => {
-            let lista = `<a class="container__crayons-tag"><span
-            class="crayons-tag__prefix">${etiqueta}</span></a>`
-            return lista
-        }
+    const etiquetasarr = post.etiquetas;
+    let element = "";
+    for (let index = 0; index < etiquetasarr.length; index++) {
+      element += etiqueta(etiquetasarr[index]);
+    }
 
-        const etiquetasarr = post.etiquetas
-        let element = ""
-        for (let index = 0; index < etiquetasarr.length; index++) {
-            element += etiqueta(etiquetasarr[index]);
-        }
-
-        cardsContainer.innerHTML += `
-            <section class="container__One">
-                <img src="${post.imagenPortada}" class="card-img-top" alt="...">
+    cardsContainer.innerHTML += `
+            <section class="container__One border mb-2 shadow card">
+            <div clas= "card">
+            <img src="${post.imagenPortada}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <div class="container__imgtext">
                         <img class="container__imgUser" src="${post.imagenAvatar}" alt="">
                         <p class="container__imgtext--name"> ${post.usuario} <br> Oct 6'19</p>
-                    </div>
+                    </div> <br>
                     <div id="contenidoEtiqueta" class="conteiner__tow ">
                         <h1 class="container__two--title col-12  ">
                             <a class="container__titleSmall " href="./pages/postCard.html?${doc.id} ">${post.title}</a>
@@ -58,7 +58,8 @@ window.addEventListener("DOMContentLoaded", async () => {
                         </div>
                     </div>
                 </div>
+            </div>                
             </section>
             `;
-    })
-})
+  });
+});
